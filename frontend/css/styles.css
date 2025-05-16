@@ -1,0 +1,432 @@
+/* پایه و تنظیمات کلی */
+body {
+  font-family: Tahoma, sans-serif; /* فونت برای کل صفحه */
+  background-color: #f9f9f9; /* رنگ پس‌زمینه صفحه */
+  margin: 0; /* حذف فاصله‌های پیش‌فرض */
+  padding: 0; /* حذف پدینگ پیش‌فرض */
+  direction: rtl; /* تنظیم جهت نوشتار به راست به چپ */
+}
+
+/* هدر */
+header {
+  background-color: #3f51b5; /* رنگ پس‌زمینه هدر */
+  color: white; /* رنگ متن هدر */
+  padding: 1rem; /* فاصله داخلی هدر */
+  text-align: center; /* متن هدر به صورت مرکزی */
+  font-size: 1.5rem; /* اندازه فونت */
+}
+
+/* نوار جستجو */
+#search-bar {
+  text-align: center; /* قرارگیری مرکزی نوار جستجو */
+  padding: 1rem; /* فاصله داخلی نوار جستجو */
+}
+
+#searchInput {
+  width: 60%; /* عرض ورودی جستجو */
+  padding: 10px; /* فاصله داخلی ورودی جستجو */
+  font-size: 1rem; /* اندازه فونت ورودی جستجو */
+  border: 1px solid #ccc; /* مرز ورودی جستجو */
+  border-radius: 8px; /* گرد کردن گوشه‌ها */
+}
+
+/* کانتینر پروفایل و منوی احراز هویت */
+.profile-container {
+  position: relative; /* موقعیت نسبی برای قرار دادن منو در داخل این قسمت */
+  display: inline-block; /* نمایش در کنار هم با سایر آیتم‌ها */
+  cursor: pointer; /* نشانگر موس تغییر به حالت دست */
+}
+
+
+
+/* منوی احراز هویت */
+.auth-menu {
+  position: absolute; /* قرار گرفتن منو به صورت مطلق */
+  top: 100%; /* منو دقیقا زیر پروفایل قرار گیرد */
+  right: 0; /* از سمت راست نسبت به کانتینر */
+  background-color: white; /* رنگ پس‌زمینه منو */
+  border: 1px solid #ccc; /* مرز منو */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* سایه در اطراف منو */
+  border-radius: 8px; /* گرد کردن گوشه‌های منو */
+  padding: 10px; /* فاصله داخلی منو */
+  flex-direction: column; /* چیدمان آیتم‌ها به صورت عمودی */
+  gap: 5px; /* فاصله بین لینک‌ها */
+  z-index: 10; /* اولویت نمایش منو */
+  display: none; /* مخفی بودن منو به طور پیش‌فرض */
+}
+
+/* لینک‌های داخل منو احراز هویت */
+.auth-menu a {
+  text-decoration: none; /* حذف خط زیر لینک‌ها */
+  color: #681212; /* رنگ لینک‌ها */
+  padding: 6px 10px; /* فاصله داخلی لینک‌ها */
+  border-radius: 5px; /* گرد کردن گوشه‌های لینک‌ها */
+  transition: background 0.3s; /* تغییر زمینه با افکت */
+}
+
+/* تغییر پس‌زمینه لینک‌ها در حالت hover */
+.auth-menu a:hover {
+  background-color: #720606; /* رنگ پس‌زمینه لینک هنگام hover */
+}
+
+/* نمایش منو هنگام hover بر روی پروفایل */
+.profile-container:hover .auth-menu {
+  display: flex; /* نمایش منو در حالت hover */
+  background-color: #720606;
+  
+}
+
+/* متن خوشامدگویی کاربر */
+#userGreeting {
+  color: #b1f1d1; /* رنگ متن خوشامدگویی */
+}
+
+/* دکمه خروج */
+#logoutBtn {
+  background-color: #f1c707; /* رنگ پس‌زمینه دکمه خروج */
+  color: rgb(0, 0, 0); /* رنگ متن دکمه خروج */
+  border: none; /* حذف مرز */
+  padding: 5px 10px; /* فاصله داخلی */
+  border-radius: 6px; /* گرد کردن گوشه‌ها */
+  cursor: pointer; /* تغییر به حالت دست */
+  font-family: inherit; /* استفاده از فونت پیش‌فرض */
+}
+
+/* تغییر رنگ دکمه خروج در حالت hover */
+#logoutBtn:hover {
+  background-color: #ff1a1a; /* رنگ پس‌زمینه دکمه هنگام hover */
+}
+
+/* لیست محصولات */
+#products {
+  display: grid; /* استفاده از گرید برای نمایش محصولات */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* تنظیم تعداد ستون‌ها */
+  gap: 20px; /* فاصله بین هر کارت محصول */
+  padding: 20px; /* فاصله داخلی */
+}
+
+/* کارت محصول */
+.product-card {
+  background: white; /* پس‌زمینه سفید برای کارت محصول */
+  padding: 1rem; /* فاصله داخلی کارت محصول */
+  border-radius: 10px; /* گرد کردن گوشه‌ها */
+  box-shadow: 0 0 8px rgba(0,0,0,0.1); /* سایه دور کارت */
+  text-align: center; /* تراز کردن محتویات به مرکز */
+}
+
+/* تصویر محصول */
+.product-card img {
+  width: 100%; /* عرض تصویر برابر با عرض کارت */
+  height: auto; /* ارتفاع خودکار تصویر */
+  border-radius: 10px; /* گرد کردن گوشه‌ها */
+}
+
+/* عنوان محصول */
+.product-card h3 {
+  color: #333; /* رنگ عنوان محصول */
+  margin-top: 10px; /* فاصله از بالا */
+}
+
+/* توضیحات محصول */
+.product-card p {
+  margin: 5px 0; /* فاصله از بالا و پایین */
+}
+
+/* دکمه‌های خرید */
+.product-card button {
+  margin: 5px; /* فاصله از دکمه‌ها */
+  padding: 8px 15px; /* فاصله داخلی دکمه‌ها */
+  border: none; /* حذف مرز */
+  border-radius: 6px; /* گرد کردن گوشه‌ها */
+  cursor: pointer; /* تغییر به حالت دست */
+  color: white; /* رنگ متن دکمه */
+  font-size: 0.9rem; /* اندازه فونت دکمه */
+}
+
+/* دکمه خرید */
+.buy-btn {
+  background-color: #ff5722; /* رنگ پس‌زمینه دکمه خرید */
+}
+
+/* دکمه اضافه به سبد خرید */
+.add-to-cart-btn {
+  background-color: #2196f3; /* رنگ پس‌زمینه دکمه اضافه به سبد خرید */
+}
+
+/* سبد خرید */
+#cart-section {
+  background-color: #fff; /* پس‌زمینه سفید */
+  margin: 2rem auto; /* فاصله از بالا و پایین */
+  padding: 1rem; /* فاصله داخلی */
+  width: 90%; /* عرض 90 درصد */
+  max-width: 600px; /* حداکثر عرض */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* سایه دور سبد خرید */
+  border-radius: 10px; /* گرد کردن گوشه‌ها */
+}
+
+/* لیست آیتم‌های سبد خرید */
+#cartItems {
+  list-style: none; /* حذف علامت پیش‌فرض لیست */
+  padding: 0; /* حذف پدینگ پیش‌فرض */
+}
+
+#cartItems li {
+  padding: 10px; /* فاصله داخلی هر آیتم */
+  border-bottom: 1px solid #eee; /* مرز زیر هر آیتم */
+}
+
+/* آیکون‌های شناور */
+#floating-icons {
+  position: fixed; /* موقعیت ثابت در صفحه */
+  bottom: 20px; /* فاصله از پایین صفحه */
+  left: 20px; /* فاصله از سمت چپ */
+  display: flex; /* نمایش به صورت افقی */
+  gap: 10px; /* فاصله بین آیکون‌ها */
+  z-index: 1000; /* اولویت نمایش */
+}
+
+/* استایل آیکون‌های شناور */
+.floating-icon {
+  width: 48px; /* عرض آیکون */
+  height: 48px; /* ارتفاع آیکون */
+  border-radius: 50%; /* گرد کردن آیکون */
+  background-color: rgb(32, 13, 202); /* رنگ پس‌زمینه آیکون */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* سایه دور آیکون */
+  display: flex; /* استفاده از فلیکس‌باکس برای تراز کردن */
+  align-items: center; /* تراز کردن عمودی */
+  justify-content: center; /* تراز کردن افقی */
+  cursor: pointer; /* نشانگر موس به حالت دست */
+  transition: transform 0.2s ease; /* انیمیشن برای تغییر اندازه */
+}
+
+/* تغییر اندازه آیکون هنگام hover */
+.floating-icon:hover {
+  transform: scale(1.1); /* بزرگ کردن آیکون */
+}
+
+.floating-icon img {
+  width: 35px; /* عرض تصویر آیکون */
+  height: 35px; /* ارتفاع تصویر آیکون */
+}
+
+/* آیکون تلگرام */
+#telegram-icon {
+  position: fixed; /* موقعیت ثابت */
+  top: 20px; /* فاصله از بالای صفحه */
+  left: 20px; /* فاصله از چپ */
+  z-index: 1000; /* اولویت نمایش */
+}
+
+#telegram-icon img {
+  width: 48px; /* عرض آیکون تلگرام */
+  height: 48px; /* ارتفاع آیکون تلگرام */
+  border-radius: 50%; /* گرد کردن آیکون */
+  cursor: pointer; /* نشانگر موس به حالت دست */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* سایه دور آیکون */
+  transition: transform 0.2s ease; /* انیمیشن تغییر اندازه */
+}
+
+/* تغییر اندازه آیکون تلگرام هنگام hover */
+#telegram-icon img:hover {
+  transform: scale(1.1); /* بزرگ کردن آیکون */
+}
+
+/* دکمه چت شناور */
+#chat-button {
+  position: fixed; /* موقعیت ثابت */
+  bottom: 90px; /* فاصله از پایین صفحه */
+  left: 20px; /* فاصله از چپ */
+  background-color: #3f51b5; /* رنگ پس‌زمینه دکمه */
+  color: white; /* رنگ متن */
+  padding: 8px 10px; /* فاصله داخلی */
+  border-radius: 50%; /* گرد کردن دکمه */
+  cursor: pointer; /* نشانگر موس به حالت دست */
+  font-size: 24px; /* اندازه فونت */
+  z-index: 1000; /* اولویت نمایش */
+  box-shadow: 0 0 8px rgba(0,0,0,0.3); /* سایه دور دکمه */
+}
+
+/* پنجره چت */
+#chat-box {
+  position: fixed; /* موقعیت ثابت */
+  bottom: 150px; /* فاصله از پایین صفحه */
+  left: 20px; /* فاصله از چپ */
+  width: 280px; /* عرض پنجره چت */
+  background-color: white; /* پس‌زمینه سفید */
+  border: 1px solid #ccc; /* مرز پنجره چت */
+  display: none; /* مخفی بودن پنجره چت */
+  flex-direction: column; /* چیدمان عمودی محتویات پنجره */
+  border-radius: 10px; /* گرد کردن گوشه‌ها */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* سایه دور پنجره چت */
+  z-index: 1001; /* اولویت نمایش */
+}
+
+/* سرپنجره چت */
+.chat-header {
+  background-color: #3f51b5; /* رنگ پس‌زمینه */
+  color: white; /* رنگ متن */
+  padding: 10px; /* فاصله داخلی */
+  font-weight: bold; /* فونت برجسته */
+  border-top-left-radius: 10px; /* گرد کردن گوشه‌های بالای چپ */
+  border-top-right-radius: 10px; /* گرد کردن گوشه‌های بالای راست */
+}
+
+/* بخش پیام‌های چت */
+.chat-body {
+  padding: 10px; /* فاصله داخلی */
+  font-size: 0.9rem; /* اندازه فونت */
+}
+
+/* ورودی پیام */
+.chat-input {
+  display: flex; /* استفاده از فلیکس‌باکس برای ورودی */
+  border-top: 1px solid #ddd; /* مرز بالای ورودی */
+}
+
+/* فیلد ورودی پیام */
+.chat-input input {
+  flex: 1; /* اطمینان از این که ورودی به صورت کامل در دسترس باشد */
+  padding: 8px; /* فاصله داخلی */
+  border: none; /* حذف مرز */
+  border-radius: 0 0 0 10px; /* گرد کردن گوشه‌های ورودی */
+}
+
+/* دکمه ارسال پیام */
+.chat-input button {
+  padding: 8px; /* فاصله داخلی */
+  background-color: #4caf50; /* رنگ پس‌زمینه دکمه */
+  color: white; /* رنگ متن */
+  border: none; /* حذف مرز */
+  cursor: pointer; /* نشانگر موس به حالت دست */
+  border-radius: 0 0 10px 0; /* گرد کردن گوشه‌های دکمه */
+}
+
+.profile-container {
+  position: fixed; /* موقعیت ثابت برای قرار گرفتن در بالای صفحه */
+  top: 10px; /* فاصله از بالای صفحه */
+  right: 10px; /* فاصله از سمت راست */
+  display: flex; /* برای نمایش آیکون و نوشته در کنار هم */
+  align-items: center; /* تراز عمودی */
+  gap: 8px; /* فاصله بین آیکون و نوشته */
+  cursor: pointer; /* نشانگر موس به صورت دست */
+  z-index: 10; /* مطمئن می‌شود که بالای دیگر عناصر قرار گیرد */
+}
+
+#userInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+
+/* منوی ورود و ثبت‌نام */
+.auth-menu {
+  position: absolute;  /* این ویژگی باعث می‌شود که منو نسبت به عنصر والد (پروفایل) موقعیت‌دهی شود */
+  top: 100%;  /* منو دقیقا زیر پروفایل قرار می‌گیرد */
+  left: 0;  /* منو به سمت چپ پروفایل چسبیده است */
+  background-color: white;  /* رنگ پس‌زمینه سفید */
+  border: 1px solid #ccc;  /* مرز خاکی رنگ */
+  box-shadow: 10px 4px 8px rgba(0,0,0,0.1);  /* سایه اطراف منو برای جذابیت بیشتر */
+  border-radius: 8px;  /* گوشه‌های گرد برای منو */
+  padding: 10px;  /* فضای داخلی منو */
+  display: flex;  /* از Flexbox برای چینش لینک‌ها استفاده می‌شود */
+  flex-direction: column;  /* لینک‌ها به صورت ستونی (vertical) چیده می‌شوند */
+  gap: 5px;  /* فاصله‌ای بین لینک‌ها قرار داده می‌شود */
+  z-index: 10;  /* منو بالاتر از سایر المان‌ها قرار می‌گیرد */
+}
+
+/* استایل لینک‌های منو */
+.auth-menu a {
+  text-decoration: none;  /* خط زیر لینک‌ها حذف می‌شود */
+  color: #333;  /* رنگ متن لینک‌ها */
+  padding: 6px 10px;  /* فضای داخلی لینک‌ها */
+  border-radius: 5px;  /* گوشه‌های گرد برای لینک‌ها */
+  transition: background 0.3s;  /* وقتی که کاربر روی لینک‌ها می‌رود، پس‌زمینه به آرامی تغییر می‌کند */
+}
+
+/* حالت hover برای لینک‌های منو */
+.auth-menu a:hover {
+  background-color: #f0f0f0;  /* وقتی موس روی لینک قرار می‌گیرد، پس‌زمینه تغییر می‌کند */
+}
+
+/* برای مخفی کردن منو */
+.hidden {
+  display: none;  /* منو با کلاس "hidden" مخفی می‌شود */
+}
+
+
+
+
+
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 14px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links li {
+  list-style: none;
+}
+
+.social-links li a {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+}
+

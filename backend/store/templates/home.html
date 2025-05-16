@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه بازی‌ها</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>فروشگاه بازی‌ها</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">خانه</a></li>
+                    <li><a href="#">محصولات</a></li>
+                    <li><a href="#">ارتباط با ما</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>بهترین بازی‌های روز دنیا را پیدا کنید!</h2>
+            <p>با بهترین تخفیف‌ها و قیمت‌ها، تجربه‌ای متفاوت را در فروشگاه ما داشته باشید.</p>
+            <a href="#" class="btn">مشاهده محصولات</a>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2>محصولات ویژه</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="{% static 'images/game1.jpg' %}" alt="بازی 1">
+                    <h3>بازی 1</h3>
+                    <p>توضیحات بازی 1</p>
+                    <button class="btn">افزودن به سبد خرید</button>
+                </div>
+                <div class="product-card">
+                    <img src="{% static 'images/game2.jpg' %}" alt="بازی 2">
+                    <h3>بازی 2</h3>
+                    <p>توضیحات بازی 2</p>
+                    <button class="btn">افزودن به سبد خرید</button>
+                </div>
+                <div class="product-card">
+                    <img src="{% static 'images/game3.jpg' %}" alt="بازی 3">
+                    <h3>بازی 3</h3>
+                    <p>توضیحات بازی 3</p>
+                    <button class="btn">افزودن به سبد خرید</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>تمامی حقوق محفوظ است &copy; 2025</p>
+        </div>
+    </footer>
+</body>
+</html>
